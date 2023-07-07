@@ -1,0 +1,11 @@
+---
+- name: create git
+  hosts: all
+  tasks:
+    - name: git/maven insatll
+      apt:
+        name: "{{item.a}}"
+        state: "{{item.b}}"
+      with_items:
+        - {a: git,b: present}
+        - {a: maven,b: present}

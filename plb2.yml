@@ -1,0 +1,8 @@
+---
+- name: install a git
+  hosts: all
+  tasks:
+    - name: git insiatll
+      apt:
+        name: git
+        state: abesent

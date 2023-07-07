@@ -1,0 +1,23 @@
+---
+- name: install apache
+  hosts: all
+  tasks:
+    - name: install apache2
+      apt:
+        name: "{{item.a}}"
+        state: "{{item.b}}"
+        update_cache: "{{item.c}}"
+      with_items:
+        - {a: apache2,b: present,c: no}
+    - name: edit index.html
+      copy:
+        content: "chandu @@@Rc"
+        dest: /var/www/html/index.html
+      notify: restart apache
+  handlers:
+    - name: restart apache
+      service:
+        name: "{{item.a}}"
+        state: "{{item.b}}"
+      with_items:
+        - {a: apache2,b: restarted}

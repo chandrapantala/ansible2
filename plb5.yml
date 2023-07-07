@@ -1,0 +1,9 @@
+---
+- name: tomcat insatll
+  hosts: all
+  tasks:
+    - name: tomcat insatll
+      apt:
+        name: tomcat9-admin
+        state: absent
+        update_cache: yes

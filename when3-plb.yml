@@ -1,0 +1,14 @@
+---
+- name: install git in apt/yum
+  hosts: all
+  tasks: 
+    - name: install git in apt
+      apt:
+        name: git
+        state: present
+      when: ansible_distribution == "Ubuntu"
+    - name: install git on yum
+      yum:
+        name: git
+        state: present
+      when: ansible_distribution == "RedHat"

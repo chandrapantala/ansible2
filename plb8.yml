@@ -1,0 +1,15 @@
+---
+- name: install/uninstall application
+  hosts: all
+  vars: 
+    - a: tomcat9
+    - b: present
+    - c: no
+  tasks:
+    - name: install tom
+      apt:
+        name: "{{a}}"
+        state: "{{b}}"
+        update_cache: "{{c}}"
+
+

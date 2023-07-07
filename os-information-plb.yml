@@ -1,0 +1,10 @@
+---
+- name: check os info
+  hosts: all
+  tasks:
+    - name: capter os name
+      debug:
+        msg: "{{ansible_distribution}}"
+    - name: check version
+      debug:
+        msg: "{{ansible_distribution_version}}"

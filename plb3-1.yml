@@ -1,0 +1,23 @@
+---
+- name: config apache
+  hosts: all
+  tasks:
+    - name: apche install
+      apt:
+        name: apache2
+        state: absent
+        update_cache: yes
+    - name: edit index file
+      copy:
+        content: "chandraPanTala@@@Love"
+        dest: /var/www/html/index.html
+    - name: restart service
+      service:
+        name: apache2
+        state: restarted
+    - name: check responce apache
+      uri:
+        url: http://172.31.18.121:8080
+        status_code: -1
+
+

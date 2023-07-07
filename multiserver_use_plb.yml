@@ -1,0 +1,39 @@
+---
+- name: install jenkins
+  hosts: all
+  tasks:
+    - name: jenkins downloads
+      apt:
+        name: "{{item.a}}"
+        state: "{{item.b}}"
+        update_cache: "{{item.c}}"
+      with_items:
+        - {a: openjdk-11-jdk,b: present,c: yes}
+        - {a: git,b: present,c: no}
+        - {a: maven,b: present,c: no}
+    - name: install jenkins war
+      get_url:
+        url: https://get.jenkins.io/war-stable/2.401.2/jenkins.war
+        dest: /home/ubuntu/playbooks
+- name: insall tomcat
+  hosts: all
+  tasks:
+    - name: install tomcat9/tomcat9-admin
+      apt:
+        name: "{{item.a}}"
+        state: "{{item.b}}"
+        update_cache: "{{item.c}}"
+      with_items:
+        - {a: tomcat9,b: present,c: yes}
+        - {a: tomcat9-admin,b: present,c: no}
+    - name: copy tomcat.xml file
+      copy:
+        src: /home/ubuntu/playbooks/tomcat-users.xml
+        dest: /etc/tomcat9
+      notify: restart service
+  handlers:
+    - name: restart service
+      service: 
+        name: tomcat9
+        state: restarted
+

@@ -1,0 +1,31 @@
+---
+- name: conf tomcat
+  hosts: all
+  tasks:
+    - name: tom insatll
+      apt:
+        name: tomcat9
+        state: present
+        update_cache: yes
+    - name: tomadm insatll
+      apt:
+        name: tomcat9-admin
+        state: present
+        update_cache: yes
+    - name: attach tomcat.xtm file
+      copy:
+        src: /home/ubuntu/playbooks/tomcat-users.xml
+        dest: /etc/tomcat9/
+    - name: port change
+      replace:
+        regexp: 8080
+        replace: 9090
+        path: /etc/tomcat9/server.xml
+    - name: restart service 
+      service:
+        name: tomcat9
+        state: restarted
+    - name: check tomcat server
+      uri:
+        url: http://172.31.18.121
+        status_code: 200

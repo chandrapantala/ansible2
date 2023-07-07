@@ -1,0 +1,10 @@
+---
+- name: install/uninstall
+  hosts: all
+  tasks:
+    - name: apache install
+      apt:
+        name: "{{a}}"
+        state: "{{b}}"
+        update_cache: "{{c}}"
+

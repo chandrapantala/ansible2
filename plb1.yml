@@ -1,0 +1,12 @@
+---
+- name: create a user
+  hosts: all
+  tasks:
+    - name: user chsesthuna
+      user:
+        name: pav
+        password: 112
+        uid: 1414
+        shell: /bin/bash
+        comment: "chandra"
+        home: /tmp/ravi
