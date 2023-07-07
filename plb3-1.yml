@@ -21,5 +21,5 @@
         status_code: -1
 
 -->ansible-playbook plb3.yml -b
-#apache installation and content change in apachhe page and restart and url check
+#apache uninstallation and content change in apachhe page and restart and url check
 
