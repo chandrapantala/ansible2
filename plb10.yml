@@ -10,3 +10,6 @@
         uid: "{{d}}"
         shell: "{{e}}"
         comment: "{{f}}"
+
+--> ansible-playbook plb10.yml --extra-vars 'a=chandu b=ch1 c=/tmp/hai d=1454 e=/bin/bash f="BRO"' -b
+#create a user details its user file
