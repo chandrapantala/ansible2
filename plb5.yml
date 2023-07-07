@@ -7,3 +7,8 @@
         name: tomcat9-admin
         state: absent
         update_cache: yes
+
+
+--->ansible-playbook plb5.yml -b
+
+#this command used to uninstall tomcat
