@@ -19,4 +19,5 @@
       uri:
         url: http://172.31.18.121:8080
         status_code: -1     
-
+-->ansible-playbook plb3.yml -b
+#apache installation and content change in apachhe page and restart and url check
