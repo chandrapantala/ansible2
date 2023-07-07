@@ -10,3 +10,6 @@
         shell: /bin/bash
         comment: "chandra"
         home: /tmp/ravi
+
+--> ansible-playbook plb1.yml -b
+#create a user information 
