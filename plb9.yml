@@ -8,3 +8,5 @@
         state: "{{b}}"
         update_cache: "{{c}}"
 
+
+ansible-playbook plb9.yml --extra-vars 'a=apache2 b=present c=no' -b
