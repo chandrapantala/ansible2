@@ -1,0 +1,14 @@
+---
+- name: apache install multi child play books
+  hosts: all
+  tasks:
+    - name: install apache
+      include: "{{item}}"
+      with_items:
+        - install.yml
+        - restart.yml
+        - index.yml
+        - pouse.yml
+        - url.yml
+...
+

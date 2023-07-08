@@ -1,0 +1,17 @@
+---
+- name: install applications
+  hosts: all
+  tasks:
+    - name: install apache2
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+    - name: restart service apache2
+      service:
+        name: apache2
+        state: restarted
+    - name: check responce
+      uri:
+        url: http://172.31.18.121
+        status_code: 200

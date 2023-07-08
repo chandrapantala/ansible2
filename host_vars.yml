@@ -1,12 +1,12 @@
 ---
-- name: create user
-  hosts: all
+- name: create a user foldre
+  hosts: 172.31.18.121
   tasks:
-    - name: create user
+    - name: create a user
       user:
         name: "{{a}}"
         password: "{{b}}"
         home: "{{c}}"
         uid: "{{d}}"
         shell: "{{e}}"
-        comment: "{{f}}"
+

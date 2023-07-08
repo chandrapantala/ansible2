@@ -10,6 +10,3 @@
       with_items:
         - {a: tomcat9,b: present,c: yes}
         - {a: tomcat9-admin,b: present,c: no}
-
--->ansible-playbook plb-with_items2.yml -b
-#multi application installed by using with_items

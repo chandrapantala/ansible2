@@ -7,6 +7,3 @@
         name: "{{a}}"
         state: "{{n}}"
         update_cache: "{{c}}"
-
-
-ansible-playbook plb6.yml --extra-vars 'a=tree n=present c=no' -b

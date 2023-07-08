@@ -1,0 +1,5 @@
+---
+- name: responce url
+  uri:
+    url: "{{h}}"
+    status_code: "{{i}}"

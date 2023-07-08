@@ -9,6 +9,3 @@
       with_items:
         - {a: git,b: present}
         - {a: maven,b: present}
-
---> ansible-playbook plb-with_items.yml -b
-#multi application installed git&maven by use cmd with_items

@@ -6,6 +6,3 @@
       apt:
         name: git
         state: abesent
-
---> ansible-playbook plb2.yml -b
-#git uninstallation

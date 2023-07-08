@@ -1,0 +1,6 @@
+---
+- name: install apache
+  apt:
+    name: "{{a}}"
+    state: "{{b}}"
+    update_cache: "{{c}}"

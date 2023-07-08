@@ -21,6 +21,3 @@
         state: "{{item.b}}"
       with_items:
         - {a: apache2,b: restarted}
-
---> ansible-playbook plb-handeler1.yml -b
-#its used like a task but its only runs when called by notifier in other task

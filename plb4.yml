@@ -29,6 +29,3 @@
       uri:
         url: http://172.31.18.121
         status_code: 200
-
---->ansible-playbook plb4.yml
-# tomcat9$tomcat9-admin installation and restart process and port change

@@ -12,7 +12,7 @@
       notify: check url responce
     - name: ceat index.html
       copy:
-        content: "deployment file can be achived"
+        content: "deployment file can be achivedu"
         dest: /var/www/html/index.xml
       notify: restart apache
   handlers:
@@ -23,8 +23,6 @@
     - name: check url responce
       uri:
         url: "{{item}}"
+        status_code: 200
       with_items:
         - http://172.31.18.121
-
---> ansible-playbook plb-handler2.yml -b
-#it can used to module and its like a task but will only run when called by a notifier in another task

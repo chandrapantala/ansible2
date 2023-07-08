@@ -12,4 +12,4 @@
         state: "{{b}}"
         update_cache: "{{c}}"
 
-ansible-playbook plb8.yml -b
+

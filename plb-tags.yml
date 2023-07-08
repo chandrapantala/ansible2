@@ -17,12 +17,3 @@
       copy:
         src: /etc/passwd
         dest: /tmp
-
---> ansible-playbook plb-tags.yml -b
-#install all modules
---> ansible-playbook plb-tags.yml --tags="tagged" -b
-#only installed tags gived modules
---> ansible-playbook plb-tags.yml --tags="untagged" -b
-#with out tags modules can be installed remain not installed
---> ansible-playbook plb-tags.yml --tags="tree_install" -b
-#seecific path to to gives in tags run only specicic taged module

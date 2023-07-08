@@ -1,0 +1,43 @@
+- name: config apache in ubuntu and httpd in redhat
+  hosts: all
+  tasks:
+    - name: install apache in ubuntu
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+      when: ansible_distribution == "Ubuntu"
+    
+    - name: install httpd in redhat
+      yum:
+        name: httpd
+        state: present
+        update_cache: yes
+      when: ansible_distribution == "RedHat"
+    
+    - name: restart apache on ubuntu
+      service:
+        name: apache2
+        state: restarted
+      when: ansible_distribution == "Ubuntu"
+    
+    - name: restart httpd on redhat
+      service:
+        name: httpd
+        state: restarted
+      when: ansible_distribution == "RedHat"
+    
+    - name: check response from Apache/HTTPD on all managed nodes
+      uri:
+        url: "{{ item }}"
+        return_content: yes
+      register: response
+      with_items:
+        - http://172.31.28.99
+        - http://172.31.18.121
+    
+    - name: display the response status codes
+      debug:
+        msg: "{{ item.item }} returned status code: {{ item.status }}"
+      with_items: "{{ response.results }}"
+
