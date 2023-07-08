@@ -10,3 +10,10 @@
         uid: "{{d}}"
         shell: "{{e}}"
 
+#previosly created cd host_vars---a: ch1
+                                  b: 14ch
+                                  c: /tmp/ch1
+                                  d: 1414
+                                  e: /bin/bash
+---> ansible-playbook host_vars.yml -b
+
