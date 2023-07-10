@@ -16,3 +16,9 @@
         - name: disply sucess msg
           debug:
             msg: "git install"
+
+# error handler it can used to any error progamm in remain correct program runs 
+error programm can skipped its mainly used in "rescue" 
+ex: present runs os ubuntu install module apt but another install yum it runs in redhat but not in os present now
+this time rescue only runs apt module skipped yum module
+--> ansible-playbook -plb-error-handler.yml -b
