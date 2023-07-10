@@ -2,3 +2,6 @@
 - name: pause 1 min
   pause:
     minutes: "{{g}}"
+
+#it can  used in group_vars
+--> vars-- g: 1
