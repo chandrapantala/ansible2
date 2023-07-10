@@ -12,4 +12,6 @@
         state: "{{b}}"
         update_cache: "{{c}}"
 
+ #its the vars file but directly gives in  vars place
+ --> ansible-playbook plb8.yml -b
 
