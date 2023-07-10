@@ -3,3 +3,6 @@
   copy:
     content: "{{d}}"
     dest: "{{e}}"
+
+# it can be used in roles
+cd /etc/ansible/roles/apache2/tasks
