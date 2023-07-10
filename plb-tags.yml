@@ -17,3 +17,11 @@
       copy:
         src: /etc/passwd
         dest: /tmp
+
+#tags is used to specific moules runs
+--> ansuble-playbook plb-tags.yml --tags="tagged" -b
+# only run tags conditions
+--> ansible-playbook plb-tags.yml --tags="untagged" -b
+# it time runs not mension tags
+--> ansible-playbook plb-tags.yml --tags="create_user" -b
+#specific taged module gives to runs single module
