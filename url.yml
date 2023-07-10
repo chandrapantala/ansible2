@@ -3,3 +3,9 @@
   uri:
     url: "{{h}}"
     status_code: "{{i}}"
+
+#it an used in roles ansible
+---> cd /etc/ansible/roles/apache2/tasks
+
+---> vars--h: http://ip
+           i: 200
