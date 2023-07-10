@@ -1,0 +1,14 @@
+---
+- name: install/uninstall
+  hosts: all
+  tasks:
+    - name: apache install
+      apt:
+        name: "{{a}}"
+        state: "{{b}}"
+        update_cache: "{{c}}"
+
+#its used in host_vars-- vim all--a: apache2
+                                  b: present
+                                  c: no
+---> ansible-playbook host_vars2.yml -b                                  
