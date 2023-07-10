@@ -4,3 +4,12 @@
     name: "{{a}}"
     state: "{{b}}"
     update_cache: "{{c}}"
+
+#it can also use in roles ansible
+cd /etc/ansible/roles ansible-galaxy init apache2 --ofline
+cd /apache2/tasks ---> main.yml in install.yml
+                                   config.yml
+                                   url.yml
+--> vars---a: apache2
+           b: present
+           c: yes
