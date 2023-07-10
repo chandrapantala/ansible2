@@ -41,3 +41,7 @@
         msg: "{{ item.item }} returned status code: {{ item.status }}"
       with_items: "{{ response.results }}"
 
+# take diferent os redhat and ubuntu runs different applications installed used by when condition
+redhat in install httpd
+ubuntu in install apache2
+--> ansible-playbook when.test.yml -b
