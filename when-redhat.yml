@@ -14,3 +14,8 @@
         state: present
         update_cache: yes
       when: ansible_distribution == "RedHat"
+
+      # it can used in when condition to different os is also runs specific
+      anible_distribution == "RedHat" another os "Ubuntu" which os present in instances runs condition
+      remain os skipped not comes error
+      ---> ansible-playbook when-redhat.yml -b
