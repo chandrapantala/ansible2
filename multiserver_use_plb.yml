@@ -37,3 +37,8 @@
         name: tomcat9
         state: restarted
 
+# ci-cd runs in diffrent servers qa,prod,master in install differennt applications
+mastre in java,git,maven,jenkins
+qa in tomcat9,tomcat9-admin
+prod in tomcat9,tomcat9-admin
+--> ansible-playbook multiserver_use_plb.yml -b
