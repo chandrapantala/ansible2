@@ -12,3 +12,6 @@
         - url.yml
 ...
 
+#it's the group_var programm
+main ues of multi chaild books runs once time used include
+---> ansible-playbook var_include.yml
