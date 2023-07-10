@@ -11,3 +11,14 @@
       file:
         name: "{{e}}"
         state: "{{f}}"
+
+# create host_vars in user module and file modules
+host_vars---vim all--a: ch1
+                     b: ch4
+                     c: 1145
+                     e: /tmp/ch1
+                     f: directory
+---> ansible-playbook plb7.yml -b
+#another process in --extra-vars
+---> ansible-playbook plb7.yml --extra-vars 'a=ch1 b=ch4 c=1145 e=/tmp/ch1 f=directory' -b
+---> ansible-playbook plb7.yml --extra-vars 'a=ch1 b=ch4 c=1145 e=/tmp/ch1 f=directory' -b
