@@ -21,3 +21,8 @@
         state: "{{item.b}}"
       with_items:
         - {a: apache2,b: restarted}
+
+#install apache2 and restart and index change  uesr in hanlers 
+handlers is mostly used in like a task but will only run when called by a notifier in another task 
+and its not runs multiple time in restart runs only once
+--> ansible-playbook plb-handler1.yml -b
