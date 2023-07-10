@@ -9,3 +9,7 @@
         src: /etc/passwd
         dest: /tmp
       when: a == 10
+
+#when condition is used to true or false
+ex: a==10 it can before gives a=1o it's true condition but u can give a=20 but its false condition not working
+--> ansible-playbook when-pbl.yml -b 
