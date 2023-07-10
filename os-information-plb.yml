@@ -8,3 +8,6 @@
     - name: check version
       debug:
         msg: "{{ansible_distribution_version}}"
+
+# debug is used to information finds of OS and Version
+--> ansible-playbook os-information-plb.yml -b
