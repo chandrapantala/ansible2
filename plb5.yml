@@ -7,3 +7,6 @@
         name: tomcat9-admin
         state: absent
         update_cache: yes
+
+# install/uninstall tomcat application
+---> ansinle-playbook plb5.yml -b
