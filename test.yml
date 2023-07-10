@@ -15,3 +15,5 @@
       uri:
         url: http://172.31.18.121
         status_code: 200
+
+---> nasible-playbook test.yml -b
