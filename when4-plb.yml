@@ -31,3 +31,7 @@
       with_items:
         - http://172.31.28.99
         - http://172.31.18.121
+
+#this condition in install different os in diffrent application
+and install aplications and restart in os differnt and url also 
+--> ansible-playbook when4-plb.yml -b
