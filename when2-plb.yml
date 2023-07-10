@@ -10,3 +10,5 @@
         dest: /tmp
       when: a == 10
 
+#this condition in when a==10 but vars in a=20 its false condition
+--> ansible-playbook when2-plb.yml -b
