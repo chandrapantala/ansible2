@@ -3,3 +3,7 @@
   service:
     name: "{{a}}"
     state: "{{f}}"
+
+#it can used in group_vars
+---> vim vars all: a: apache2
+                   f: restarted
