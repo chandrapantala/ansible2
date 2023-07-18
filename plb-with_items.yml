@@ -9,3 +9,6 @@
       with_items:
         - {a: git,b: present}
         - {a: maven,b: present}
+
+#two images install in multi images used with_items
+---> ansible-playbook plb-with_items.yml -b
