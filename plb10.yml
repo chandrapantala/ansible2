@@ -10,3 +10,15 @@
         uid: "{{d}}"
         shell: "{{e}}"
         comment: "{{f}}"
+
+#create extra vars to create user
+host_vars: ---
+           a: cha
+           b: ch2
+           c: /tmp/ch
+           d: 1144
+           e: /bin/bash
+           f: "chandu"
+---> ansible-playbook plb10.tml -b
+#another proceess
+-->ansible-playbook plb10.yml --extra-vars "a=ch b=ch2 c=/tmp/ch d=1144 e=/bim/bash f="chandu" -b
