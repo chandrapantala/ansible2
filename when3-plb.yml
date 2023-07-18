@@ -12,3 +12,8 @@
         name: git
         state: present
       when: ansible_distribution == "RedHat"
+
+# it can used by when condition true or false conditions converted
+this case in ubuntun os runs but another os gives yum module os redhat not in this m/c
+these time in when condition works to skipped redhat modules only runs ubuntun os based modules
+--->ansible-playbook when3-plb.yml -b
