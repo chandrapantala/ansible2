@@ -16,4 +16,5 @@
         url: http://172.31.18.121
         status_code: 200
 
----> nasible-playbook test.yml -b
+#playbook userd to create container with help of apt,service,uri modules
+---> ansible-playbook test.yml -b
