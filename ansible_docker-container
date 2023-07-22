@@ -1,5 +1,5 @@
-#
-
+#ansible in install docker intigration
+sudo vim plb1.yml
 ---
 - name: install docker on ansible
   hosts: all
@@ -16,7 +16,14 @@
         - curl -fsSL https://get.docker.com -o install-docker.sh
         - sh install-docker.sh
 
-#
+---> ansible-playbook plb1.yml -b
+---> ssh ip_of server1 ---> sudo docker comtainer ls
+                      ---> sudo docker images #show images list --exit
+---> ansible all -m shell -a 'docker rm -f $(docker ps -aq)' -b #delete all conatiners
+---> ansible all -m shell -a 'docker system prune -af' -b  #delete all images
+
+#create multi containers
+sudo vim plb2.yml
 ---
 - name: create multi containers in dockers
   hosts: all
@@ -26,7 +33,10 @@
         name: "container{{item}}"
         image: nginx
       with_sequence: count=3
+---> ansible-playbook plb2.yml -b
 
+#delete docker container use playbook
+sudo vim plb3.yml
 ---
 - name: tomcat install
   hosts: all
@@ -40,8 +50,10 @@
         name: mytomee
         state: absent
 
-#
+-->ansible-playbook plb3.yml -b
 
+#container links mysql and wordpress
+sudo vim plb4.yml
 ---
 - name: install mysql and wordpress
   hosts: all
@@ -60,7 +72,10 @@
           - 8808:80
         links:
           - mydb:mysql
-#
+--> ansible-playbook plb4.yml -b
+
+#create image in docker_ansible
+sudo vim plb5.yml
 ---
 - name: insatll tomcat image
   hosts: all
@@ -69,7 +84,10 @@
       docker_image:
         name: tomee
         source: pull
-#
+---> ansible-playbook plb5.yml -b
+
+#multi images create in docker_ansible
+sudo vim plb6.yml
 ---
 - name: create a multi images
   hosts: all
@@ -83,4 +101,6 @@
         - tomee
         - maven
 
-
+---> ansible-playbook plb6.yml -b
+--->ansible all -m shell -a 'docker rm -f $(docker ps -aq)' -b
+--->ansible all -m shell -a 'docker system prune -af' -b
