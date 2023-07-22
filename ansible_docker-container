@@ -15,3 +15,72 @@
         - pip3
         - curl -fsSL https://get.docker.com -o install-docker.sh
         - sh install-docker.sh
+
+#
+---
+- name: create multi containers in dockers
+  hosts: all
+  tasks:
+    - name: install nginx
+      docker_container:
+        name: "container{{item}}"
+        image: nginx
+      with_sequence: count=3
+
+---
+- name: tomcat install
+  hosts: all
+  tasks:
+    - name: install tomcat
+      docker_container:
+        name: mytomee
+        image: tomee
+    - name: delete container
+      docker_container:
+        name: mytomee
+        state: absent
+
+#
+
+---
+- name: install mysql and wordpress
+  hosts: all
+  tasks:
+    - name: install mysql
+      docker_container:
+        name: mydb
+        image: mysql:5
+        env:
+          MYSQL_ROOT_PASSWORD: CH1
+    - name: install wordperss
+      docker_container:
+        name: myword
+        image: wordpress
+        ports:
+          - 8808:80
+        links:
+          - mydb:mysql
+#
+---
+- name: insatll tomcat image
+  hosts: all
+  tasks:
+    - name: insatll tome image
+      docker_image:
+        name: tomee
+        source: pull
+#
+---
+- name: create a multi images
+  hosts: all
+  tasks:
+    - name: install multi images
+      docker_image:
+        name: "{{item}}"
+        source: pull
+      with_items:
+        - nginx
+        - tomee
+        - maven
+
+
