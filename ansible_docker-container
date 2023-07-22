@@ -1,0 +1,17 @@
+#
+
+---
+- name: install docker on ansible
+  hosts: all
+  tasks:
+    - name: docker pip insatll
+      apt:
+        name: python3-pip
+        state: present
+        update_cache: yes
+    - name: docker instllation pip
+      shell: "{{item}}"
+      with_items:
+        - pip3
+        - curl -fsSL https://get.docker.com -o install-docker.sh
+        - sh install-docker.sh
